@@ -1,11 +1,12 @@
 //create theme
 export const theme = {
     colors:{
-        navbarBGColor: 'white',
-        mainColor:'#86C8BC',
-        logoColor: 'darkslategray',
-        linkColor: '#8B7E74',
-        linkHoverColor: 'rgb(5,5,5)',
+        navbarBGColor: '#F2F2F2',
+        mainColor:'#2CBFBF',
+        logoColor: '#F2695C',
+        linkColor: '#2CBFBF',
+        navIconColor: '#2CBFBF',
+        linkHoverColor: '#F2695C',
         headerFormColor: 'rgba(15,63,42,0.36)',
         colorTurq: '#2AB0BF',
         colorMint: '#2CBFBF',
@@ -21,8 +22,8 @@ export const theme = {
         sm:'576px',
     },
     letter:{
-        textTransform:'uppercase',
-        // textTransform:'lowercase',
+        textTransformU:'uppercase',
+        textTransformL:'lowercase',
     },
 
 }

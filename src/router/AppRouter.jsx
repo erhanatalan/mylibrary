@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Footer from '../components/footer/Footer'
-import Navbar from '../components/navbar/Navbar'
+import Navx from '../components/navbar/Navbar'
 import NotFound from '../components/notFound/NotFound'
 import About from '../pages/about/About'
 import Detail from '../pages/detail/Detail'
@@ -14,7 +14,7 @@ import PrivateRouter from './PrivateRouter'
 const AppRouter = () => {
   return (
     <BrowserRouter>
-      <Navbar/>
+      <Navx/>
       <GlobalStyles/>
       <Routes>
         <Route path='/login' element={<Login/>}/>
