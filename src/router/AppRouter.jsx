@@ -12,7 +12,7 @@ import { GlobalStyles } from '../styles/Global.styles'
 import PrivateRouter from './PrivateRouter'
 
 const AppRouter = () => {
-  const [user, setUser] = useState(false)
+  const [user, setUser] = useState( sessionStorage.getItem("user") || false)
   // console.log(user);
   return (
     <BrowserRouter>

@@ -77,6 +77,9 @@ const Login = ({user, setUser}) => {
             </button>
           </div>
           <p className="forgot-password text-right mt-2">
+          Not registered yet? <a href="/register">Sign Up</a>
+          </p>
+          <p className="forgot-password text-right">
             Forgot <a href="#">password?</a>
           </p>
         </div>
