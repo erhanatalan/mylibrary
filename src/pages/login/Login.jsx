@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const DIV = styled.div`
@@ -36,19 +37,29 @@ const DIV = styled.div`
 
   `
 
-const Login = ({setUser}) => {
-
+const Login = ({user, setUser}) => {
+  const navigate = useNavigate()
+  console.log(sessionStorage.getItem("user"));
+  console.log(user);
+  const handleSubmit=(e)=>{
+    e.preventDefault()
+    setUser("Success")
+    sessionStorage.setItem("user", 'Success')
+    sessionStorage.getItem("user")=='Success' ? navigate("/") : navigate("/login")
+  }
   return (
     <DIV className="Auth-form-container">
-      <form className="Auth-form">
+      <form className="Auth-form" onSubmit={handleSubmit}>
         <div className="Auth-form-content">
           <h3 className="Auth-form-title">Sign In</h3>
+
           <div className="form-group xyz mt-3">
             <label>Email address</label>
             <input
               type="email"
               className="form-control mt-1"
               placeholder="Enter email"
+              required
             />
           </div>
           <div className="form-group xyx mt-3">
@@ -57,6 +68,7 @@ const Login = ({setUser}) => {
               type="password"
               className="form-control mt-1"
               placeholder="Enter password"
+              required
             />
           </div>
           <div className="d-grid gap-2 mt-3 xyz">

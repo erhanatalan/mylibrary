@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
 import { HamburgerIcon, Logo, Menu, MenuLink, Navx } from './Navbar.style'
 import {menuIcon} from '../../helper/iconData'
-const Navbar = () => {
+const Navbar = ({setUser}) => {
   const [showMenu, setShowMenu] = useState(false)
   const handleIcon = ()=>{
     setShowMenu(!showMenu)
+  }
+  const hanleOut = ()=>{
+    setUser(false)
+    sessionStorage.clear();
   }
   return (
     <Navx justify='space-between' wrap="wrap">
@@ -13,9 +17,7 @@ const Navbar = () => {
       <Menu showMenu={showMenu}>
         <MenuLink to='/'>Home</MenuLink>
         <MenuLink to='/about'>About</MenuLink>
-        {/* <MenuLink to='/register'>Register</MenuLink> */}
-        {/* <MenuLink to='/login'>Login</MenuLink> */}
-        <MenuLink to='/login'>Logout</MenuLink>
+        <MenuLink to='/login' onClick={hanleOut} >Logout</MenuLink>
       </Menu>
       <HamburgerIcon onClick={handleIcon}>
         {menuIcon}

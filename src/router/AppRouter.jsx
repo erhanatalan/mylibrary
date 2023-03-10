@@ -13,14 +13,19 @@ import PrivateRouter from './PrivateRouter'
 
 const AppRouter = () => {
   const [user, setUser] = useState(false)
+  // console.log(user);
   return (
     <BrowserRouter>
-      {user && <Navx/> }
+      {user && <Navx user={user} setUser={setUser} /> }
       <GlobalStyles/>
       <Routes>
-        <Route path='/login' element={<Login setUser={setUser}/>}/>
-        <Route path='/register' element={<Register/>}/>
-        <Route  element={<PrivateRouter/>}>
+        {!user && (
+          <>
+            <Route path='/login' element={<Login user={user} setUser={setUser}/>}/>
+            <Route path='/register' element={<Register/>}/>
+          </>
+        )}
+        <Route  element={<PrivateRouter user={user} setUser={setUser}/>}>
           <Route path='/' element={<Home/>}/>
           <Route path='/about' element={<About/>}/>
           <Route path='/detail:id' element={<Detail/>}/>
