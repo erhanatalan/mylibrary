@@ -28,7 +28,7 @@ const AppRouter = () => {
         <Route  element={<PrivateRouter user={user} setUser={setUser}/>}>
           <Route path='/' element={<Home/>}/>
           <Route path='/about' element={<About/>}/>
-          <Route path='/detail:id' element={<Detail/>}/>
+          <Route path='/detail/:id' element={<Detail/>}/>
           <Route path='*' element={<NotFound/>}/>
         </Route>
 

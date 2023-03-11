@@ -2,11 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 const Foot = styled.footer`
+  margin-top:1rem;
   background: #666;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
 	width: 100%;
-  position: absolute;
+  /* position: absolute; */
   max-height:200px;
   bottom:0;
   overflow:hidden;
